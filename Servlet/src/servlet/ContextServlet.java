@@ -25,6 +25,7 @@ public class ContextServlet extends HttpServlet {
         context.setInitParameter("","");
         context.getInitParameter("");
 
+
         System.out.println(path);
     }
 }

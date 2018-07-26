@@ -23,7 +23,6 @@
     密码：<input type="password" name="pwd"> <br>
 
 
-
     <input type="submit" value="登录">
 
 </form>

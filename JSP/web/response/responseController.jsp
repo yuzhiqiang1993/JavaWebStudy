@@ -12,29 +12,33 @@
 </head>
 <body>
 
-
 <%
-
-
-    response.getOutputStream();//返回一个响应的二进制输出流
+    response.getOutputStream();//返回一个响应二进制的输出流
     response.getWriter();//返回可以输出字符的对象
     response.sendRedirect("");//页面重定向
     response.setContentLength(1000);//设置响应头长度
-    response.setContentType("");//设置响应的MIME类型
+    response.setContentType("text/html; charset=utf-8");//设置响应的MIME类型
     response.getCharacterEncoding();//获取编码格式
+    response.addCookie(new Cookie("",""));//添加Cookie
+    response.setHeader("Content-Disposition","attachment; filename=fileName");//配置header，表示浏览器已下载的方式打开文件
+    response.setStatus(200);//设置响应码
 
 
-//    String account = request.getParameter("account");
-//    String pwd = request.getParameter("pwd");
-//
-//    if (account.equals("yzq")&&pwd.equals("123")){
-//        response.getWriter().write("账号密码正确");
-//    }else {
-//        response.getWriter().write("账号或密码错误");
-//    }
 
 
-    response.sendRedirect(request.getContextPath());
+
+
+    String account = request.getParameter("account");
+    String pwd = request.getParameter("pwd");
+
+    if (account.equals("yzq")&&pwd.equals("123")){
+      response.getWriter().write("登录成功");
+    }else {
+        response.getWriter().write("账号或密码错误");
+    }
+
+
+   // response.sendRedirect(request.getContextPath());
 
 %>
 

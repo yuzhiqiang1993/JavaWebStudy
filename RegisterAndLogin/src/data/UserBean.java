@@ -1,20 +1,23 @@
 package data;
 
+import java.util.List;
+
 public class UserBean {
 
-    private String userName;
+
     private String account;
+    private String pwd;
     private String img;
     private String gender;
-    private String hobbies;
+    private List<String> hobbies;
 
 
-    public String getUserName() {
-        return userName;
+    public String getPwd() {
+        return pwd;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setPwd(String pwd) {
+        this.pwd = pwd;
     }
 
     public String getAccount() {
@@ -41,23 +44,22 @@ public class UserBean {
         this.gender = gender;
     }
 
-    public String getHobbies() {
+    public List<String> getHobbies() {
         return hobbies;
     }
 
-    public void setHobbies(String hobbies) {
+    public void setHobbies(List<String> hobbies) {
         this.hobbies = hobbies;
     }
-
 
     @Override
     public String toString() {
         return "UserBean{" +
-                "userName='" + userName + '\'' +
-                ", account='" + account + '\'' +
+                "account='" + account + '\'' +
+                ", pwd='" + pwd + '\'' +
                 ", img='" + img + '\'' +
                 ", gender='" + gender + '\'' +
-                ", hobbies='" + hobbies + '\'' +
+                ", hobbies=" + hobbies +
                 '}';
     }
 }
