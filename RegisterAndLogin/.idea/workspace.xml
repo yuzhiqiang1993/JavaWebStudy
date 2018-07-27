@@ -7,28 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4503c9cf-7e4a-4a46-9daa-810f94360fa6" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RegisterAndLogin.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Cookie/src/servlet/LoginServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Cookie/web/WEB-INF/lib/servlet-api.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/RegisterAndLogin_war_exploded/WEB-INF/classes/data/UserBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/RegisterAndLogin_war_exploded/WEB-INF/classes/data/UserBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/RegisterAndLogin_war_exploded/WEB-INF/classes/servlet/InitServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/RegisterAndLogin_war_exploded/WEB-INF/classes/servlet/InitServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/RegisterAndLogin_war_exploded/WEB-INF/classes/servlet/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/RegisterAndLogin_war_exploded/WEB-INF/classes/servlet/LoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/RegisterAndLogin_war_exploded/WEB-INF/classes/servlet/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/RegisterAndLogin_war_exploded/WEB-INF/classes/servlet/RegisterServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/RegisterAndLogin_war_exploded/upload/1532594252896.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/RegisterAndLogin_war_exploded/upload/1532596626131.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/RegisterAndLogin_war_exploded/upload/1532597642907.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/RegisterAndLogin_war_exploded/upload/1532597757771.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/RegisterAndLogin_war_exploded/upload/1532598361271.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/RegisterAndLogin_war_exploded/upload/1532598598602.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/RegisterAndLogin_war_exploded/upload/1532598729052.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/RegisterAndLogin_war_exploded/upload/1532598757109.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/RegisterAndLogin_war_exploded/upload/1532598893751.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/RegisterAndLogin_war_exploded/upload/1532598937301.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RegisterAndLogin/data/UserBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RegisterAndLogin/data/UserBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RegisterAndLogin/servlet/InitServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RegisterAndLogin/servlet/InitServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RegisterAndLogin/servlet/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RegisterAndLogin/servlet/LoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RegisterAndLogin/servlet/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RegisterAndLogin/servlet/RegisterServlet.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -84,13 +65,22 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-1737270503">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/register.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="665">
+            <state relative-caret-position="770">
               <caret line="35" column="28" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="28" />
             </state>
           </provider>
@@ -108,7 +98,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/servlet/InitServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
+            <state relative-caret-position="396">
               <caret line="27" column="50" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="50" />
             </state>
           </provider>
@@ -117,7 +107,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/servlet/LoginServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
+            <state relative-caret-position="352">
               <caret line="24" column="70" selection-start-line="24" selection-start-column="70" selection-end-line="24" selection-end-column="70" />
             </state>
           </provider>
@@ -126,7 +116,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/loginSuccess.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="760">
+            <state relative-caret-position="880">
               <caret line="40" selection-end-line="48" />
             </state>
           </provider>
@@ -135,7 +125,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
+            <state relative-caret-position="506">
               <caret line="23" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
@@ -144,7 +134,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/servlet-api.jar!/javax/servlet/ServletResponse.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
+            <state relative-caret-position="286">
               <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
             </state>
           </provider>
@@ -193,8 +183,8 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="501" />
-    <option name="y" value="131" />
+    <option name="x" value="500" />
+    <option name="y" value="130" />
     <option name="width" value="1265" />
     <option name="height" value="585" />
   </component>
@@ -207,6 +197,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -234,15 +225,42 @@
             <path>
               <item name="RegisterAndLogin" type="b2602c69:ProjectViewProjectNode" />
               <item name="RegisterAndLogin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="servlet" type="462c0819:PsiDirectoryNode" />
+              <item name="RegisterServlet" type="1a9f42e2:ClassTreeNode" />
+            </path>
+            <path>
+              <item name="RegisterAndLogin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RegisterAndLogin" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RegisterAndLogin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RegisterAndLogin" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RegisterAndLogin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RegisterAndLogin" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RegisterAndLogin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RegisterAndLogin" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="servlet-api.jar" type="ab9368bb:PsiFileNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -382,17 +400,17 @@
       <workItem from="1532582174774" duration="56000" />
       <workItem from="1532582304483" duration="14501000" />
       <workItem from="1532609342834" duration="493000" />
+      <workItem from="1532656463971" duration="30000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17386000" />
+    <option name="totallyTimeSpent" value="17416000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49646392" visible="true" weight="0.15147454" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49646392" visible="true" weight="0.15348525" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -505,43 +523,43 @@
     <entry file="file://$PROJECT_DIR$/src/data/Contants.java" />
     <entry file="file://$PROJECT_DIR$/web/register.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
+        <state relative-caret-position="770">
           <caret line="35" column="28" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/loginSuccess.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="40" selection-end-line="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/servlet-api.jar!/javax/servlet/ServletResponse.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/servlet/InitServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
+        <state relative-caret-position="396">
           <caret line="27" column="50" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/servlet/LoginServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
+        <state relative-caret-position="352">
           <caret line="24" column="70" selection-start-line="24" selection-start-column="70" selection-end-line="24" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/loginSuccess.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="880">
+          <caret line="40" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/servlet-api.jar!/javax/servlet/ServletResponse.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
         </state>
       </provider>
     </entry>
