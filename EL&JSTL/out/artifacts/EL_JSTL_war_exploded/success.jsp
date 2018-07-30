@@ -28,12 +28,23 @@
 
 <%--使用EL表达式取值--%>
 用户名：
-requestScope:
-pageScope${pageScope.account}
-${requestScope.account} //指定从request作用域中查找account
-sessionScope${sessionScope.account}
-applicationScope${applicationScope.account}
+
+<%--从 page 作用域中查找account--%>
+${pageScope.account}
 <br>
+<%--从 request 作用域中查找account--%>
+${requestScope.account}
+<br>
+<%--从 session 作用域中查找account--%>
+${sessionScope.account}
+<br>
+<%--从 application 作用域中查找account--%>
+${applicationScope.account}
+<br>
+
+<%--依次从page->request->session->application中取值,取到为止--%>
 密码: ${pwd}
+
+
 </body>
 </html>
