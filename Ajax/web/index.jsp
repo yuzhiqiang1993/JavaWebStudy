@@ -50,19 +50,16 @@
             })
         }
 
-
         function loginWiteGet() {
+
             $.get(
                 "<%=application.getContextPath()%>/login.do",
                 {account: $("input[name=account]").val(), pwd: $("input[name=pwd]").val()},
                 function (data) {
                     console.log(result)
                     $("#result").html(data.msg)
-
-
                 })
         }
-
 
         function loginWithPost() {
             $.post(
