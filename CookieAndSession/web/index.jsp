@@ -24,7 +24,7 @@
 
         for (Cookie cookie :
                 cookies) {
-            System.out.println("cookie:  "+cookie.getName() + ":" + cookie.getValue());
+            System.out.println("cookie:  " + cookie.getName() + ":" + cookie.getValue());
 
             /*如果cookie中存储的有account，取出该值 */
             if (cookie.getName().equals("account")) {
