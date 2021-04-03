@@ -7,19 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6889de5-132e-4769-a024-87686f9c9778" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../AccessControl/AccessControl.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../AccessControl/AccessControl.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ajax/Ajax.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ajax/Ajax.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CookieAndSession.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CookieAndSession.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Cookie_war_exploded/WEB-INF/classes/servlet/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Cookie_war_exploded/WEB-INF/classes/servlet/LoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Cookie_war_exploded/WEB-INF/classes/servlet/SessionServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Cookie_war_exploded/WEB-INF/classes/servlet/SessionServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/servlet/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlet/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EL&amp;JSTL/EL&amp;JSTL.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../EL&amp;JSTL/EL&amp;JSTL.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Fliter/Fliter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Fliter/Fliter.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Listener/Listener.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Listener/Listener.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RegisterAndLogin/RegisterAndLogin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../RegisterAndLogin/RegisterAndLogin.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Servlet/Servlet.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Servlet/Servlet.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,6 +93,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1532684350858" />
@@ -114,6 +103,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="project.propDebugger" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -223,7 +213,10 @@
       <workItem from="1532656306602" duration="12815000" />
       <workItem from="1532684399275" duration="352000" />
       <workItem from="1532913617379" duration="75000" />
-      <workItem from="1615208145152" duration="736000" />
+      <workItem from="1615208145152" duration="1524000" />
+      <workItem from="1615296565208" duration="938000" />
+      <workItem from="1616825547580" duration="29000" />
+      <workItem from="1617027090668" duration="1130000" />
     </task>
     <servers />
   </component>
