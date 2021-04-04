@@ -45,6 +45,7 @@ public class DeleteAccountServlet extends HttpServlet {
 
             }
 
+
             connection.close();
 
         } catch (Exception e) {

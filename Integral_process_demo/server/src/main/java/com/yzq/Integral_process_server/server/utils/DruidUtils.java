@@ -13,7 +13,7 @@ public class DruidUtils {
         druidDataSource.setUrl("jdbc:mysql://localhost:3306/xeon?useUnicode=true&characterEncoding=UTF-8");
         druidDataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         druidDataSource.setUsername("root");
-        druidDataSource.setPassword("19930904");
+        druidDataSource.setPassword("19930904");//这个密码改成你自己的数据库的密码
 
     }
 
