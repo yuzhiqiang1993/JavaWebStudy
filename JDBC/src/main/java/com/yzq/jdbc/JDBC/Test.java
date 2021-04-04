@@ -12,7 +12,7 @@ public class Test {
             /*1.加载MySql驱动*/
             Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
             /*2建立连接*/
-            String url = "jdbc:mysql://localhost:3306/xeon";
+            String url = "jdbc:mysql://localhost:3306/xeon?useUnicode=true&characterEncoding=UTF-8";
             String user = "root";
             String pwd = "19930904";
             /*获取连接*/

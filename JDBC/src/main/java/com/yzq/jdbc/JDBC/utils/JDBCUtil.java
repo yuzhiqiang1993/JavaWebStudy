@@ -12,7 +12,7 @@ import java.sql.*;
 public class JDBCUtil {
 
     private static Connection connection;
-    private static final String url = "jdbc:mysql://localhost:3306/xeon";
+    private static final String url = "jdbc:mysql://localhost:3306/xeon?useUnicode=true&characterEncoding=UTF-8";
     private static final String user = "root";
     private static final String pwd = "19930904";
 
