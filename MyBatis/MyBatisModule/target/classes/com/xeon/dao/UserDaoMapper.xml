@@ -6,31 +6,31 @@
 <!--这里的namespace 对应 UserDaoMapper 类-->
 <mapper namespace="com.xeon.dao.UserDaoMapper">
 
-    <select id="getUsers" resultType="com.xeon.pojo.User">
+    <select id="getUsers" resultType="User">
         select *
         from user;
 
     </select>
 
 
-    <select id="getUserById" resultType="com.xeon.pojo.User" parameterType="int">
+    <select id="getUserById" resultType="User" parameterType="int">
         select *
         from user
         where id = #{id}
     </select>
-    <select id="getUsersLike" resultType="com.xeon.pojo.User">
+    <select id="getUsersLike" resultType="User">
         select *
         from user
         where name like #{value}
     </select>
 
 
-    <insert id="addUser" parameterType="com.xeon.pojo.User">
+    <insert id="addUser" parameterType="User">
         insert into user(gid, name, default_company_code, org_id)
         values (#{gid}, #{name}, #{default_company_code}, #{org_id})
     </insert>
 
-    <update id="updateUser" parameterType="com.xeon.pojo.User">
+    <update id="updateUser" parameterType="User">
 
         update user
         set gid=#{gid},
@@ -40,7 +40,7 @@
         where id = #{id}
     </update>
 
-    <delete id="deleteUser" parameterType="com.xeon.pojo.User">
+    <delete id="deleteUser" parameterType="User">
         delete
         from user
         where id =
