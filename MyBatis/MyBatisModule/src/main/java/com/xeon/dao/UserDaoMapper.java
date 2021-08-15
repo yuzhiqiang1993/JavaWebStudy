@@ -29,4 +29,7 @@ public interface UserDaoMapper {
 
     /*删除用户*/
     void deleteUser(User user);
+
+    /*模糊查询*/
+    List<User> getUsersLike(String filterString);
 }

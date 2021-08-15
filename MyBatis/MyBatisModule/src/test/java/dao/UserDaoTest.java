@@ -68,13 +68,26 @@ public class UserDaoTest {
     }
 
     @Test
-    public void deleteUser(){
+    public void deleteUser() {
         SqlSession sqlSession = MyBatisUtil.getSqlSession();
         UserDaoMapper mapper = sqlSession.getMapper(UserDaoMapper.class);
         User user = new User();
         user.setId(3);
         mapper.deleteUser(user);
         sqlSession.commit();
+        sqlSession.close();
+
+    }
+
+
+    @Test
+    public void getUserBySearch() {
+        SqlSession sqlSession = MyBatisUtil.getSqlSession();
+        UserDaoMapper mapper = sqlSession.getMapper(UserDaoMapper.class);
+
+        List<User> users = mapper.getUsersLike("%x%");
+        System.out.println("users = " + users);
+
         sqlSession.close();
 
     }
