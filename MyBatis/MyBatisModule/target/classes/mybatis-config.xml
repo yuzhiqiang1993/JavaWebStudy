@@ -35,7 +35,10 @@
 <!--        <mapper resource="com/xeon/dao/UserDaoMapper.xml"/>-->
 
 
-        <!--根据类匹配-->
-        <mapper class="com.xeon.dao.UserDaoMapper"/>
+        <!--根据类匹配 此时xml文件要跟接口类放在一起 且名称要相同-->
+<!--        <mapper class="com.xeon.dao.UserDaoMapper"/>-->
+
+        <!--使用包扫描进行注入  文件名也必须要和xml一致-->
+        <package name="com.xeon.dao"/>
     </mappers>
 </configuration>
