@@ -16,6 +16,11 @@ import java.io.InputStream;
  * @time : 10:38
  */
 public class MyBatisUtil {
+
+    private MyBatisUtil() {
+
+    }
+
     private static SqlSessionFactory sessionFactory;
 
     static {

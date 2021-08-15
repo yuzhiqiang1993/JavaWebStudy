@@ -11,7 +11,33 @@
     </select>
 
 
-    <select id="getUser" resultType="com.xeon.pojo.User" parameterType="int" >
-        select * from user where id=#{id}
+    <select id="getUserById" resultType="com.xeon.pojo.User" parameterType="int">
+        select *
+        from user
+        where id = #{id}
     </select>
+
+
+    <insert id="addUser" parameterType="com.xeon.pojo.User">
+        insert into user(gid, name, default_company_code, org_id)
+        values (#{gid}, #{name}, #{default_company_code}, #{org_id})
+    </insert>
+
+    <update id="updateUser" parameterType="com.xeon.pojo.User">
+
+        update user
+        set gid=#{gid},
+            name=#{name},
+            default_company_code=#{default_company_code},
+            org_id=#{org_id}
+        where id = #{id}
+    </update>
+
+    <delete id="deleteUser" parameterType="com.xeon.pojo.User">
+        delete
+        from user
+        where id =
+              #{id}
+
+    </delete>
 </mapper>
