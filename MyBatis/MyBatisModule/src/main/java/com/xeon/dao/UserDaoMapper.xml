@@ -9,9 +9,9 @@
 
     <!--用来解决实体类字段和数据库字段不一致的问题  通过下面做匹配-->
     <resultMap id="userMap" type="User">
-<!--        <id column="id" property="id"></id>-->
-        <result column="org_id" property="orgId"></result>
-        <result column="defaultCompanyCode" property="default_company_code"></result>
+        <!--        <id column="id" property="id"></id>-->
+        <result column="org_id" property="orgId"/>
+        <result column="default_company_code" property="defaultCompanyCode"/>
     </resultMap>
 
     <select id="getUsers" resultMap="userMap">
@@ -31,11 +31,16 @@
         from user
         where name like #{value}
     </select>
+    <select id="getUserByName" resultType="com.xeon.pojo.User">
+        select *
+        from user
+        where name = #{name}
+    </select>
 
 
     <insert id="addUser" parameterType="User">
         insert into user(gid, name, default_company_code, org_id)
-        values (#{gid}, #{name}, #{default_company_code}, #{org_id})
+        values (#{gid}, #{name}, #{defaultCompanyCode}, #{orgId})
     </insert>
 
     <update id="updateUser" parameterType="User">

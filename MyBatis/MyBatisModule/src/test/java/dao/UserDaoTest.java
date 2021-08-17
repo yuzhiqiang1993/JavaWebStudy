@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import java.util.Random;
 
 public class UserDaoTest {
     @Test
@@ -44,7 +45,7 @@ public class UserDaoTest {
         SqlSession sqlSession = MyBatisUtil.getSqlSession();
         UserDaoMapper mapper = sqlSession.getMapper(UserDaoMapper.class);
 
-        User user = new User("1312", "e232", "212312", "12312");
+        User user = new User("1312", "e232", "212312", String.valueOf(new Random(1).nextInt(9999)));
         mapper.addUser(user);
 
         sqlSession.commit();
@@ -87,6 +88,19 @@ public class UserDaoTest {
 
         List<User> users = mapper.getUsersLike("%x%");
         System.out.println("users = " + users);
+
+        sqlSession.close();
+
+    }
+
+    @Test
+    public void getUserByName() {
+        SqlSession sqlSession = MyBatisUtil.getSqlSession();
+        UserDaoMapper mapper = sqlSession.getMapper(UserDaoMapper.class);
+
+        final User user = mapper.getUserByName("xeon");
+
+        System.out.println("user = " + user);
 
         sqlSession.close();
 

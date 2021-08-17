@@ -32,4 +32,6 @@ public interface UserDaoMapper {
 
     /*模糊查询*/
     List<User> getUsersLike(String filterString);
+
+    User getUserByName(String name);
 }
