@@ -4,9 +4,15 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
+
     <!--引入外部properties文件-->
     <properties resource="db.properties"/>
 
+    <!--设置-->
+    <settings>
+        <!--开启日志-->
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
 
     <!--别名-->
     <typeAliases>

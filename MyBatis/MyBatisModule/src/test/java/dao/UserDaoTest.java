@@ -6,6 +6,7 @@ import com.xeon.utils.MyBatisUtil;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.jupiter.api.Test;
 
+import java.lang.reflect.Proxy;
 import java.util.List;
 import java.util.Random;
 
