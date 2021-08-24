@@ -6,7 +6,6 @@ import com.xeon.utils.MyBatisUtil;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.jupiter.api.Test;
 
-import java.lang.reflect.Proxy;
 import java.util.List;
 import java.util.Random;
 
@@ -36,6 +35,17 @@ public class UserDaoTest {
 
         System.out.println("user = " + user);
         sqlSession.close();
+
+
+        final SqlSession sqlSession1 = MyBatisUtil.getSqlSession();
+
+        final UserDaoMapper mapper1 = sqlSession1.getMapper(UserDaoMapper.class);
+
+        final User userById = mapper1.getUserById(1);
+
+        System.out.println("userById = " + userById);
+
+        sqlSession1.close();
 
     }
 
