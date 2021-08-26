@@ -5,8 +5,6 @@
 
 <!--这里的namespace 对应 UserDaoMapper 类-->
 <mapper namespace="com.xeon.dao.UserDaoMapper">
-
-
     <!--开启二级缓存 对应的数据需要实现Serializable接口-->
     <cache/>
 
@@ -21,14 +19,23 @@
     <select id="getUsers" resultMap="userMap">
         select *
         from user;
-
     </select>
 
 
-    <select id="getUserById" resultType="User" parameterType="int">
+    <select id="getUser" resultType="User" parameterType="User">
         select *
         from user
-        where id = #{id}
+
+        <!--动态sql-->
+        <where>
+            <if test="id!=null">
+                id=#{id}
+            </if>
+
+            <if test="gid!=null">
+                and gid=#{gid}
+            </if>
+        </where>
     </select>
     <select id="getUsersLike" resultType="User">
         select *
@@ -48,7 +55,6 @@
     </insert>
 
     <update id="updateUser" parameterType="User">
-
         update user
         set gid=#{gid},
             name=#{name},
@@ -62,6 +68,5 @@
         from user
         where id =
               #{id}
-
     </delete>
 </mapper>

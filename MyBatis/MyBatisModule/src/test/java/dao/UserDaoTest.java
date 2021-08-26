@@ -31,17 +31,25 @@ public class UserDaoTest {
         SqlSession sqlSession = MyBatisUtil.getSqlSession();
 
         UserDaoMapper mapper = sqlSession.getMapper(UserDaoMapper.class);
-        User user = mapper.getUserById(1);
 
-        System.out.println("user = " + user);
+
+        final User user = new User();
+        user.setGid("5109U24613");
+
+        User userResult = mapper.getUser(user);
+
+        System.out.println("user = " + userResult);
         sqlSession.close();
 
 
+
+        /*测试缓存*/
+        user.setId(1);
         final SqlSession sqlSession1 = MyBatisUtil.getSqlSession();
 
         final UserDaoMapper mapper1 = sqlSession1.getMapper(UserDaoMapper.class);
 
-        final User userById = mapper1.getUserById(1);
+        final User userById = mapper1.getUser(user);
 
         System.out.println("userById = " + userById);
 
