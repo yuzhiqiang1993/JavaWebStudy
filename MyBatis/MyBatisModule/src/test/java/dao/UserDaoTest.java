@@ -79,7 +79,7 @@ public class UserDaoTest {
         SqlSession sqlSession = MyBatisUtil.getSqlSession();
 
         UserDaoMapper mapper = sqlSession.getMapper(UserDaoMapper.class);
-        User user = new User("8888", "306400", "喻志强", "5109U24663", 3);
+        User user = new User("8888", "306400", "喻志强111", "5109U24663", 6);
 
         mapper.updateUser(user);
 

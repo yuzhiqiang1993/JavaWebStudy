@@ -56,11 +56,25 @@
 
     <update id="updateUser" parameterType="User">
         update user
-        set gid=#{gid},
-            name=#{name},
-            default_company_code=#{default_company_code},
-            org_id=#{org_id}
-        where id = #{id}
+        <set>
+            <if test="gid!=null">
+                gid=#{gid},
+            </if>
+            <if test="name!=null">
+                name=#{name},
+            </if>
+            <if test="defaultCompanyCode!=null">
+                default_company_code=#{defaultCompanyCode},
+            </if>
+            <if test="orgId!=null">
+                org_id=#{orgId}
+            </if>
+        </set>
+        <where>
+            <if test="id!=null">
+                id = #{id}
+            </if>
+        </where>
     </update>
 
     <delete id="deleteUser" parameterType="User">
