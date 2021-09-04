@@ -2,6 +2,7 @@ package com.xeon.main;
 
 import com.xeon.entity.User;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Test {
@@ -17,10 +18,18 @@ public class Test {
         System.out.println("user = " + user);
 
 
-        /*IOC 方式*/
-        ApplicationContext applicationContext=new ClassPathXmlApplicationContext("application.xml");
+        /*IOC XML方式*/
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("application.xml");
         final Object user1 = applicationContext.getBean("user");
 
         System.out.println("user1 = " + user1);
+
+
+        /*注解方式*/
+        final AnnotationConfigApplicationContext annotationIoc = new AnnotationConfigApplicationContext("com/xeon/entity");
+
+        final Object user2 = annotationIoc.getBean("user");
+
+        System.out.println("user2 = " + user2);
     }
 }
