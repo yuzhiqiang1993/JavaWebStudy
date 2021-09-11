@@ -5,21 +5,24 @@
 <web-app>
     <display-name>Archetype Created Web Application</display-name>
 
-    <!--spring mvc配置-->
+
+    <!--spring mvc 就相当于是一个分发器。把请求都拦截调分发给指定的handler（这里的handler我们一般名字都起为controller），controller中可以写很多个业务方法-->
     <servlet>
+        <!--起的名字 跟下面的servlet-mapping相对应-->
         <servlet-name>springmvc</servlet-name>
+        <!--指定分发的类，这个是官方提供好的-->
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 
         <init-param>
             <param-name>contextConfigLocation</param-name>
             <param-value>classpath:springmvc.xml</param-value>
         </init-param>
-        <!-- <load-on-startup>1</load-on-startup> -->
     </servlet>
 
 
     <servlet-mapping>
         <servlet-name>springmvc</servlet-name>
+        <!-- / :表示拦截所有请求 -->
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
