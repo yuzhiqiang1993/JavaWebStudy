@@ -10,9 +10,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
+@RequestMapping("/userInfo")
 public class UserContorller {
 
-    @RequestMapping(value = "user", method = {RequestMethod.GET, RequestMethod.POST})
+    @RequestMapping(value = "/user", method = {RequestMethod.GET, RequestMethod.POST})
     @ResponseBody
     public String getUser(String id) {
         /*参数可以直接拿到  get和post 表单形式的都支持*/
