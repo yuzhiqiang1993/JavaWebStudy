@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans.xsd">
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
 
 
-    <!--SSM  Spring  SpringMvC  MyBatis-->
+<!--SSM  Spring  SpringMvC  MyBatis-->
 
 
     <!--Sping：核心就是IOC和AOP，常用的就是IOC，主要是作为容器，注入需要的对象-->
@@ -14,9 +21,9 @@
 
     <!--druid 数据库连接池-->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
-        <property name="url" value="${jdbc_url}"/>
-        <property name="username" value="${jdbc_user}"/>
-        <property name="password" value="${jdbc_password}"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/xeon?serverTimezone=UTC"/>
+        <property name="username" value="root"/>
+        <property name="password" value="19930904"/>
 
         <property name="filters" value="stat"/>
 
@@ -44,10 +51,17 @@
 
         <!--数据源 通过上面那个的数据库连接池获取 链接对象-->
         <property name="dataSource" ref="dataSource"/>
+        <!--mapper存放的位置-->
+        <property name="mapperLocations" value="classpath:com/xeon/dao/mapper/*.xml"/>
 
-        <property name="mapperLocations" value="classpath:com/xeon/data/*.xml"/>
-        <property name=" configLocation" value="mybatis.xml"/>
+        <!--MyBatis的相关配置-->
+        <property name="configLocation" value="classpath:mybatis.xml"/>
 
+    </bean>
+
+    <!--扫描mapper接口 这个不写的话找不到mapper-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.xeon.dao.mapper"/>
     </bean>
 
 </beans>
