@@ -1,6 +1,7 @@
 package com.xeon.controller;
 
 
+import com.google.gson.Gson;
 import com.xeon.dao.data.User;
 import com.xeon.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,12 +28,11 @@ public class UserController {
 
     @RequestMapping("/listUser")
     @ResponseBody
-    public void listUser() {
+    public String listUser() {
 
         final List<User> users = userService.listUser();
 
         System.out.println("users = " + users);
-
-
+        return new Gson().toJson(users);
     }
 }
