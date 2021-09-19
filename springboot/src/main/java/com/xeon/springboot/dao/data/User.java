@@ -1,0 +1,10 @@
+package com.xeon.springboot.dao.data;
+
+
+import lombok.Data;
+
+@Data
+public class User {
+    private Integer id;
+    private String name;
+}
