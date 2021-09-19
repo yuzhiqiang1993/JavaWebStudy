@@ -22,7 +22,7 @@ public class UserDaoImpl implements UserDao {
 
     /*正常来讲dao层负责链接数据库操作数据，这里我们模拟一下*/
 
-    private static Map<Integer, User> userMap = new HashMap<>();
+    private static final Map<Integer, User> userMap = new HashMap<>();
 
     static {
 
