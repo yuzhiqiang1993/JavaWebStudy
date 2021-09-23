@@ -8,8 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @MapperScan("com.xeon.springboot_mp.dao.mapper")
 public class SpringbootMpApplication {
 
-
-
     public static void main(String[] args) {
         SpringApplication.run(SpringbootMpApplication.class, args);
     }
