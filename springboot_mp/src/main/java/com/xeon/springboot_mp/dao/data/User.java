@@ -2,6 +2,7 @@ package com.xeon.springboot_mp.dao.data;
 
 import com.baomidou.mybatisplus.annotation.*;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -36,11 +37,19 @@ public class User implements Serializable {
      */
     private String gender;
 
+    /*
+     * 是否可用
+     * */
+    @JsonIgnore
+    private int enable;
+
 
     @TableField(value = "create_time", fill = FieldFill.INSERT)
+    @JsonIgnore
     private LocalDateTime createTime;
 
     @TableField(value = "update_time", fill = FieldFill.INSERT_UPDATE)
+    @JsonIgnore
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDateTime updateTime;
 
