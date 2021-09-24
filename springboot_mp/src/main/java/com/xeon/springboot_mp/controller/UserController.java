@@ -11,10 +11,7 @@ import com.xeon.springboot_mp.dao.data.resp.RespPageUser;
 import com.xeon.springboot_mp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,7 +24,7 @@ public class UserController {
     UserService userService;
 
 
-    @RequestMapping("/list")
+    @GetMapping("/list")
     @ResponseBody
     List<User> getUserList() {
 
@@ -39,7 +36,7 @@ public class UserController {
         return list;
     }
 
-    @RequestMapping("/getUserById")
+    @GetMapping("/getUserById")
     @ResponseBody
     User getUserById(Integer userId) {
 
@@ -51,7 +48,7 @@ public class UserController {
     }
 
 
-    @RequestMapping(value = "/getUserLikeName", method = {RequestMethod.POST})
+    @PostMapping(value = "/getUserLikeName")
     @ResponseBody
     List<User> getUserLikeName(@RequestBody KeyWord keyWord) {
 
@@ -65,7 +62,7 @@ public class UserController {
     }
 
 
-    @RequestMapping(value = "/getUsers", method = {RequestMethod.POST})
+    @PostMapping("/getUsers")
     @ResponseBody
     BaseResp<RespPageUser> getUserList(@RequestBody RequestPage requestPage) {
 
@@ -75,6 +72,9 @@ public class UserController {
 
         userPage.setCurrent(requestPage.getPageNum());
         userPage.setSize(requestPage.getPageSize());
+
+        System.out.println("userPage.getSize() = " + userPage.getSize());
+        System.out.println("userPage.getCurrent() = " + userPage.getCurrent());
 
         final QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
         userQueryWrapper.eq("enable", 1);
