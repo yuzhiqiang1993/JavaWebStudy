@@ -60,9 +60,13 @@ spring:
         #启用
         enabled: true
   jackson:
-    #    统一的日期格式化
+    # 全局设置@JsonFormat的格式pattern
     date-format: yyyy-MM-dd HH:mm:ss
+    # 设置全局时区 东八区
     time-zone: GMT+8
+    # 当地时区
+    locale: zh
+
 logging:
   config: classpath:log4j.xml
 mybatis-plus:

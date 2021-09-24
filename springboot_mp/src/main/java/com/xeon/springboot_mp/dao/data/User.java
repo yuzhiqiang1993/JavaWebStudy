@@ -30,6 +30,7 @@ public class User implements Serializable {
     /**
      * 年龄
      */
+    @JsonFormat(pattern = "")
     private Integer age;
 
     /**
@@ -49,7 +50,6 @@ public class User implements Serializable {
     private LocalDateTime createTime;
 
     @TableField(value = "update_time", fill = FieldFill.INSERT_UPDATE)
-    @JsonIgnore
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDateTime updateTime;
 
