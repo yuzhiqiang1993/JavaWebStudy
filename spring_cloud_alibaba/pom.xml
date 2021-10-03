@@ -15,7 +15,6 @@
     <description>spring_cloud_alibaba</description>
     <properties>
         <java.version>1.8</java.version>
-        <spring.cloud-version>Hoxton.SR8</spring.cloud-version>
     </properties>
     <dependencies>
         <dependency>
@@ -83,4 +82,6 @@
         </plugins>
     </build>
 
+    <!--要加这个配置 -->
+    <packaging>pom</packaging>
 </project>
