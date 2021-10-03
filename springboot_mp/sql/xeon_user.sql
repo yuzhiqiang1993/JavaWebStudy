@@ -1,3 +1,5 @@
+drop table user;
+
 create table user
 (
     id          bigint auto_increment,
