@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,25 +31,28 @@ public class DemoController {
     public String getPort() {
 
 
-        /*先获取其他组件的ServiceInstance列表  可以通过 discoveryClient获取 */
-        final List<ServiceInstance> discoveryClientInstances = this.discoveryClient.getInstances("demo1");
+//        /*先获取其他组件的ServiceInstance列表  可以通过 discoveryClient获取 */
+//        final List<ServiceInstance> discoveryClientInstances = this.discoveryClient.getInstances("MyDemo01");
+//
+//        /*拿到具体的组件*/
+//        final ServiceInstance serviceInstance = discoveryClientInstances.get(0);
+//        /* 拿到URI  例如:http://192.168.50.60:8082 */
+//        final URI uri = serviceInstance.getUri();
+//
+//        System.out.println("serviceInstance.getUri() = " + uri);
+//
+//        String url = uri.toString() + "/demo1/port";
+//        System.out.println("url = " + url);
+//
+//        /*调用方法*/
+//        final String forObject = this.restTemplate.getForObject(url, String.class);
 
-        /*拿到具体的组件*/
-        final ServiceInstance serviceInstance = discoveryClientInstances.get(0);
-        /* 拿到URI  例如:http://192.168.50.60:8082 */
-        final URI uri = serviceInstance.getUri();
 
-        System.out.println("serviceInstance.getUri() = " + uri);
-
-        String url = uri.toString() + "/demo1/port";
-        System.out.println("url = " + url);
-
-        /*调用方法*/
-        final String forObject = this.restTemplate.getForObject(url, String.class);
-
+        /*简化的调用方式  注意 注入RestTemplate的地方要加LoadBalanced注解*/
+        final String forObject = this.restTemplate.getForObject("http://MyDemo01/demo1/port", String.class);
         System.out.println("forObject = " + forObject);
 
-        return "调用的远程服务端口号是:"+forObject;
+        return "调用的远程服务端口号是:" + forObject;
     }
 
 }
