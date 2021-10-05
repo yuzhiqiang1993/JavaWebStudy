@@ -1,15 +1,13 @@
-package com.example.demo;
+package com.xeon.getway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
-@EnableFeignClients
-public class DemoApplication {
+public class GetwayApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DemoApplication.class, args);
+        SpringApplication.run(GetwayApplication.class, args);
     }
 
 }

@@ -1,13 +1,15 @@
-package com.xeon.spring_cloud_alibaba;
+package com.xeon.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
-public class SpringCloudAlibabaApplication {
+@EnableFeignClients
+public class DemoApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringCloudAlibabaApplication.class, args);
+        SpringApplication.run(DemoApplication.class, args);
     }
 
 }

@@ -1,6 +1,6 @@
-package com.example.demo.controller;
+package com.xeon.demo.controller;
 
-import com.example.demo.feign.MyDemo01Feign;
+import com.xeon.demo.feign.MyDemo01Feign;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;

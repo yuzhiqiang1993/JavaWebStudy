@@ -1,4 +1,4 @@
-package com.example.demo.feign;
+package com.xeon.demo.feign;
 
 
 import org.springframework.cloud.openfeign.FeignClient;

@@ -1,4 +1,4 @@
-package com.example.demo.configuration;
+package com.xeon.demo.configuration;
 
 import com.alibaba.cloud.nacos.NacosDiscoveryProperties;
 import com.alibaba.cloud.nacos.ribbon.NacosServer;
