@@ -8,20 +8,23 @@ spring:
       discovery:
         locator:
           enabled: true
-      #??????
-      routes:
-        #?????id
-        - id: demo_route
-          #?????
-          uri: http://localhost:8081
-          #??????  ???http://localhost:8888/demo/demo/getPort
-          predicates:
-            - Path=/demo/**
-          filters:
-            - StripPrefix=1
-        - id: demo01_route
-          uri: http://localhost:8082
-          predicates:
-            - Path=/demo01/**
-          filters:
-            - StripPrefix=1
+
+
+#     ?????nacos???????????????????nacos????????
+#      #??????
+#      routes:
+#        #?????id
+#        - id: demo_route
+#          #?????
+#          uri: http://localhost:8081
+#          #??????  ???http://localhost:8888/demo/demo/getPort
+#          predicates:
+#            - Path=/demo/**
+#          filters:
+#            - StripPrefix=1
+#        - id: demo01_route
+#          uri: http://localhost:8082
+#          predicates:
+#            - Path=/demo01/**
+#          filters:
+#            - StripPrefix=1
