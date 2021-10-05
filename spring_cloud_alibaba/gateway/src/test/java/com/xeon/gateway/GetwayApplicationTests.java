@@ -1,4 +1,4 @@
-package com.xeon.getway;
+package com.xeon.gateway;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
