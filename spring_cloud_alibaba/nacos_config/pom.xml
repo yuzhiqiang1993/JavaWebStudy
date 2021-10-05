@@ -8,10 +8,10 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <groupId>com.xeon</groupId>
-    <artifactId>demo1</artifactId>
+    <artifactId>nacos_config</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>demo1</name>
-    <description>demo1</description>
+    <name>nacos_config</name>
+    <description>nacos_config</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>
@@ -20,11 +20,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
-        <!--spring mvc-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -32,10 +28,21 @@
         </dependency>
 
 
+        <!--spring mvc-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
         <!--nacos依赖-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+        <!--nacos 远程配置-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
         </dependency>
     </dependencies>
 
