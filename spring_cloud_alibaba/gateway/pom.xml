@@ -7,7 +7,6 @@
         <artifactId>spring_cloud_alibaba</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>com.xeon</groupId>
     <artifactId>getway</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>getway</name>
