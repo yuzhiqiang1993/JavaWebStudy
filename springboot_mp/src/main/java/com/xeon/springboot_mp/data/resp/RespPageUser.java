@@ -1,6 +1,6 @@
-package com.xeon.springboot_mp.dao.data.resp;
+package com.xeon.springboot_mp.data.resp;
 
-import com.xeon.springboot_mp.dao.data.User;
+import com.xeon.springboot_mp.dao.User;
 import lombok.Data;
 
 import java.util.List;

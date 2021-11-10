@@ -3,11 +3,11 @@ package com.xeon.springboot_mp.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.xeon.springboot_mp.dao.data.User;
-import com.xeon.springboot_mp.dao.data.request.KeyWord;
-import com.xeon.springboot_mp.dao.data.request.RequestPage;
-import com.xeon.springboot_mp.dao.data.resp.BaseResp;
-import com.xeon.springboot_mp.dao.data.resp.RespPageUser;
+import com.xeon.springboot_mp.dao.User;
+import com.xeon.springboot_mp.data.request.KeyWord;
+import com.xeon.springboot_mp.data.request.RequestPage;
+import com.xeon.springboot_mp.data.resp.BaseResp;
+import com.xeon.springboot_mp.data.resp.RespPageUser;
 import com.xeon.springboot_mp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

@@ -1,4 +1,4 @@
-package com.xeon.springboot_mp.dao.data;
+package com.xeon.springboot_mp.dao;
 
 import com.baomidou.mybatisplus.annotation.*;
 import com.fasterxml.jackson.annotation.JsonFormat;

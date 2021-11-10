@@ -1,4 +1,4 @@
-package com.xeon.springboot_mp.dao.data.resp;
+package com.xeon.springboot_mp.data.resp;
 
 import lombok.Data;
 

@@ -2,7 +2,7 @@ package com.xeon.springboot_mp;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.xeon.springboot_mp.dao.data.User;
+import com.xeon.springboot_mp.dao.User;
 import com.xeon.springboot_mp.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

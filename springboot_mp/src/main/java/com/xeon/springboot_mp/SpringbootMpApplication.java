@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("com.xeon.springboot_mp.dao.mapper")
+@MapperScan("com.xeon.springboot_mp.dao.com.xeon.springboot_mp.mapper")
 public class SpringbootMpApplication {
 
     public static void main(String[] args) {
