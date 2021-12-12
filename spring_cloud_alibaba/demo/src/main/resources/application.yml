@@ -1,0 +1,28 @@
+spring:
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+  application:
+    name: MyDemo
+server:
+  port: 8081
+
+#配置负载均衡规则
+MyDemo01:
+  ribbon:
+    #Ribbon实现负载均衡算法配置，前面的key是固定写法，后面是负载均衡算法的全路径
+    NFLoadBalancerRuleClassName: com.xeon.demo.configuration.NacosWeightedRule
+#    sentinel 监听的配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+
+
+
+
