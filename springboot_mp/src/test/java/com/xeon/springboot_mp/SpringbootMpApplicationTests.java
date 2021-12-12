@@ -119,5 +119,13 @@ class SpringbootMpApplicationTests {
 
     }
 
+    /*bsdiff生成patch包*/
+
+    @Test
+    public void fileDiff() {
+
+
+    }
+
 
 }
