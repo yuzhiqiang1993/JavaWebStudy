@@ -2,56 +2,42 @@ package com.yzq.bsdiffserver.service;
 
 
 import com.yzq.bsdiffserver.utils.BsDiffUtil;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
-import org.springframework.stereotype.Service;
 
 import java.io.File;
 
 public class BsDiffService {
 
-    static {
-        String systemType = System.getProperty("os.name");
-        System.out.println("systemType = " + systemType);
-        try {
-            final Resource classPathResource = new ClassPathResource("lib" + File.separator + "libxeon_bsdiff.dylib");
-            final File file = classPathResource.getFile();
-            System.out.println("file.getPath() = " + file.getPath());
-            System.load(file.getPath());
-        } catch (Exception e) {
-            System.out.println("e = " + e.getMessage());
-            e.printStackTrace();
-        }
-
-    }
-
     public static void testBsDiff() {
         try {
 
+            /*测试load so*/
+//            BsDiffUtil.test();
 
-            final Resource oldPathResource = new ClassPathResource("static" + File.separator + "old.txt");
-            final File oldFile = oldPathResource.getFile();
-            final Resource newPathResource = new ClassPathResource("static" + File.separator + "new.txt");
-            final File newFile = newPathResource.getFile();
+            final String projectPath = System.getProperty("user.dir");
+            String filePath = projectPath + File.separator + "tmp" + File.separator + "bsdiffdemo" + File.separator + "file" + File.separator;
+            /*旧文件路径*/
 
+            String oldFilePath = filePath + "old.txt";
+            /*新文件*/
+            String newFilePath = filePath + "new.txt";
+            /*补丁文件*/
+            String patchFilePath = filePath + "patch.txt";
+            /*合并后的文件*/
+            String combineFilePath = filePath + "combine.txt";
 
-            String path = "src" + File.separator + "main" + File.separator + "resources" + File.separator + "static" + File.separator + "patch.txt";
+            System.out.println("oldFilePath = " + oldFilePath);
+            System.out.println("newFilePath = " + newFilePath);
+            System.out.println("patchFilePath = " + patchFilePath);
+            System.out.println("combineFilePath = " + combineFilePath);
 
-            final File patchFile = new File(path);
-            System.out.println("patchFile.getPath() = " + patchFile.getAbsolutePath());
-//
-            final int fileDiffResult = BsDiffUtil.fileDiff(newFile.getAbsolutePath(), oldFile.getPath(), patchFile.getAbsolutePath());
-            System.out.println("fileDiffResult = " + fileDiffResult);
+            /*生成补丁文件*/
+            final int diffResult = BsDiffUtil.fileDiff(newFilePath, oldFilePath, patchFilePath);
+            System.out.println("diffResult = " + diffResult);
 
-            /*合并文件*/
-            String combineFilePath = "src" + File.separator + "main" + File.separator + "resources" + File.separator + "static" + File.separator + "combine.txt";
+            /*合并补丁文件*/
+            final int patchResult = BsDiffUtil.filePatch(oldFilePath, patchFilePath, combineFilePath);
+            System.out.println("patchResult = " + patchResult);
 
-            final File combineFile = new File(combineFilePath);
-
-            final int filePatchResult = BsDiffUtil.filePatch(oldFile.getAbsolutePath(), patchFile.getAbsolutePath(), combineFile.getAbsolutePath());
-
-
-            System.out.println("filePatchResult = " + filePatchResult);
 
         } catch (Exception e) {
             e.printStackTrace();

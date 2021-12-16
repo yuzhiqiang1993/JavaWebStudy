@@ -16,6 +16,8 @@
     <properties>
         <java.version>1.8</java.version>
     </properties>
+    <!--打成jar包（war包还需要再服务端安装tomcat）-->
+    <packaging>jar</packaging>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
