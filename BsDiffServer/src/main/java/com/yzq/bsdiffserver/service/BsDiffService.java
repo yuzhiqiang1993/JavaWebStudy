@@ -5,6 +5,13 @@ import com.yzq.bsdiffserver.utils.BsDiffUtil;
 
 import java.io.File;
 
+
+/**
+ * @description: 测试类
+ * @author : yuzhiqiang (zhiqiang.yu.xeon@gmail.com)
+ * @date   : 2021/12/18
+ * @time   : 14:55
+ */
 public class BsDiffService {
 
     public static void testBsDiff() {
