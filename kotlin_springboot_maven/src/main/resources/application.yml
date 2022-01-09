@@ -1,0 +1,27 @@
+server:
+  port: 8888
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/xeon
+    username: root
+    password: 19930904
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    druid:
+      #初始化大小
+      initialSize: 5
+      #最小值
+      minIdle: 5
+      #最大值
+      maxActive: 20
+      #最大等待时间，毫秒
+      maxWait: 10000
+      #配置间隔多久才进行一次检测，检测需要关闭的空闲连接
+      timeBetweenEvictionRunsMillis: 6000000
+      #配置一个连接在池中最小生存的时间
+      minEvictableIdleTimeMillis: 30000
+  application:
+    name: kotlin_springboot_maven
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
