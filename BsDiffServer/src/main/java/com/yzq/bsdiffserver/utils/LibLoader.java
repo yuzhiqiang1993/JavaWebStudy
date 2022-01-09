@@ -7,6 +7,13 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 
+
+/**
+ * @description: 用来load so文件，先将项目的so拷贝到linux中，然后加载
+ * @author : yuzhiqiang (zhiqiang.yu.xeon@gmail.com)
+ * @date   : 2021/12/18
+ * @time   : 14:33
+ */
 public class LibLoader {
     public static void loadLib(String libName, String resourcePath) {
 
