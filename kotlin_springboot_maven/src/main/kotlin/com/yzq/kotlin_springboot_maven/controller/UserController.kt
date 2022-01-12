@@ -66,12 +66,8 @@ class UserController {
 
         try {
             /*校验数据*/
-            if (user.check()) {
-                userService.save(user)
-                baseResp.data = "添加成功"
-            } else {
-                baseResp.error(RespEnum.PARAMETER_ERROR)
-            }
+            userService.save(user)
+            baseResp.data = "添加成功"
         } catch (e: Exception) {
 
             baseResp.error(RespEnum.ERROR)

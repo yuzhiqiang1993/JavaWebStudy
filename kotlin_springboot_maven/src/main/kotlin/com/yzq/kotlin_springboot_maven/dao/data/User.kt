@@ -22,24 +22,4 @@ data class User(
     var updateTime: LocalDateTime?,
     @JsonIgnore
     var enable: Int = 1,
-) {
-
-    fun check(): Boolean {
-
-        if (name.isEmpty()) {
-            return false
-        }
-
-        if (age <= 0 || age > 200) {
-            return false
-        }
-
-        if (gender != "男" && gender != "女") {
-            return false
-        }
-
-
-        return true
-
-    }
-}
+)
