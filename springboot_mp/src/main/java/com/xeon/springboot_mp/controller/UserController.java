@@ -79,7 +79,6 @@ public class UserController {
         final QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
         userQueryWrapper.eq("enable", 1);
 
-        /*分页查询 首先要先配置分页 在 com/xeon/springboot_mp/config/MyBatisPlusConfig.java 类中有代码*/
         final Page<User> page = userService.page(userPage, userQueryWrapper);
 
 
