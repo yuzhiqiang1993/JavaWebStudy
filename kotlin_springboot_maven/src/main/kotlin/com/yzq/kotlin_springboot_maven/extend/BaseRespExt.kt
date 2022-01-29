@@ -2,6 +2,7 @@ package com.yzq.kotlin_springboot_maven.extend
 
 import com.yzq.kotlin_springboot_maven.constants.RespEnum
 import com.yzq.kotlin_springboot_maven.data.resp.BaseResp
+import com.yzq.kotlin_springboot_maven.exception.BizException
 import org.springframework.transaction.interceptor.TransactionAspectSupport
 import java.lang.reflect.UndeclaredThrowableException
 
@@ -11,14 +12,24 @@ import java.lang.reflect.UndeclaredThrowableException
  * @param e Exception
  */
 fun <T> BaseResp<T>.error(e: Exception) {
-    code = RespEnum.ERROR.code
-
-    if (e is UndeclaredThrowableException) {
-        /*处理未声明的异常信息*/
-        message = e.undeclaredThrowable.message ?: RespEnum.ERROR.msg
-    } else {
-        message = e.message ?: RespEnum.ERROR.msg
+    var code: Int = RespEnum.ERROR.code
+    var msg: String = RespEnum.ERROR.msg
+    when (e) {
+        is BizException -> {
+            code = e.code
+            msg = e.message
+        }
+        is UndeclaredThrowableException -> {
+            /*处理未声明的异常信息*/
+            msg = e.undeclaredThrowable.message ?: msg
+        }
+        else -> {
+            msg = e.message ?: msg
+        }
     }
+
+    this.code = code
+    this.message = msg
     data = null
 }
 

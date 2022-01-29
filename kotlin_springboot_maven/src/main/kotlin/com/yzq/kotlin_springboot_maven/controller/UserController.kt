@@ -2,7 +2,7 @@ package com.yzq.kotlin_springboot_maven.controller
 
 import com.yzq.kotlin_springboot_maven.dao.data.User
 import com.yzq.kotlin_springboot_maven.data.resp.BaseResp
-import com.yzq.kotlin_springboot_maven.exception.ApiException
+import com.yzq.kotlin_springboot_maven.exception.BizException
 import com.yzq.kotlin_springboot_maven.extend.tryCatchBlock
 import com.yzq.kotlin_springboot_maven.service.UserService
 import org.springframework.beans.factory.annotation.Autowired
@@ -37,7 +37,7 @@ class UserController {
         val baseResp = BaseResp<String>()
 
         tryCatchBlock(baseResp) {
-            throw ApiException(-88, "后端异常了")
+            throw BizException(-88, "后端异常了")
         }
         return baseResp
 
