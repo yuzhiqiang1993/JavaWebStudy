@@ -22,6 +22,9 @@ spring:
       minEvictableIdleTimeMillis: 30000
   application:
     name: kotlin_springboot_maven
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

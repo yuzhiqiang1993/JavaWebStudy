@@ -15,10 +15,8 @@ data class User(
     val age: Int,
     val gender: String,
     @TableField(value = "create_time", fill = FieldFill.INSERT)
-    @JsonIgnore
     var createTime: LocalDateTime?,
     @TableField(value = "update_time", fill = FieldFill.INSERT_UPDATE)
-    @JsonIgnore
     var updateTime: LocalDateTime?,
     @JsonIgnore
     var enable: Int = 1,
