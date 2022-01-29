@@ -30,7 +30,7 @@ fun <T> BaseResp<T>.error(e: Exception) {
 
     this.code = code
     this.message = msg
-    data = null
+    this.data = null
 }
 
 /**
