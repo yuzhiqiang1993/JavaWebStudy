@@ -1,18 +1,11 @@
-package com.yzq.bsdiffserver;
+package com.yzq.bsdiffserver
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.runApplication
 
 @SpringBootApplication
-public class BsDiffServerApplication {
+open class BsDiffServerApplication
 
-
-    public static void main(String[] args) {
-        SpringApplication.run(BsDiffServerApplication.class, args);
-
-        System.out.println("BsDiffServerApplication 启动了");
-
-
-    }
-
+fun main(args: Array<String>) {
+    runApplication<BsDiffServerApplication>(*args)
 }

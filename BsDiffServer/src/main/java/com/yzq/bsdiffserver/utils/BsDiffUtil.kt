@@ -1,7 +1,6 @@
-package com.yzq.bsdiffserver.utils;
+package com.yzq.bsdiffserver.utils
 
-import java.io.File;
-
+import java.io.File
 
 /**
  * @author : yuzhiqiang (zhiqiang.yu.xeon@gmail.com)
@@ -9,30 +8,26 @@ import java.io.File;
  * @date : 2021/12/18
  * @time : 14:33
  */
-public class BsDiffUtil {
-
-    static {
-        String systemType = System.getProperty("os.name");
-        System.out.println("systemType = " + systemType);
+object BsDiffUtil {
+    init {
+        val systemType = System.getProperty("os.name")
+        println("systemType = $systemType")
         try {
             /*获取当前项目所在的linux路径 示例：/home/admin/webapp */
 //            final String projectPath = System.getProperty("user.dir");
-            String libPath = "lib" + File.separator + "libxeon_bsdiff.so";
-            String libName = "libxeon_bsdiff.so";
+            val libPath = "lib" + File.separator + "libxeon_bsdiff.so"
+            val libName = "libxeon_bsdiff.so"
 
             /*mac上使用dylib*/
 //            String libPath = "lib" + File.separator + "libxeon_bsdiff.dylib";
 //            String libName = "libxeon_bsdiff.dylib";
-            LibLoader.loadLib(libName, libPath);
-            System.out.println("load so success");
-
-        } catch (Exception e) {
-            System.out.println("e = " + e.getMessage());
-            e.printStackTrace();
+            LibLoader.loadLib(libName, libPath)
+            println("load so success")
+        } catch (e: Exception) {
+            println("e = " + e.message)
+            e.printStackTrace()
         }
-
     }
-
 
     /**
      * 生成补丁文件
@@ -42,7 +37,7 @@ public class BsDiffUtil {
      * @param patchFilePath
      * @return
      */
-    public static native int fileDiff(String newFilePath, String oldFilePath, String patchFilePath);
+    external fun fileDiff(newFilePath: String, oldFilePath: String, patchFilePath: String): Int
 
     /**
      * 合并文件
@@ -52,5 +47,5 @@ public class BsDiffUtil {
      * @param combineFilePath
      * @return
      */
-    public static native int filePatch(String oldFilePath, String patchFilePath, String combineFilePath);
+    external fun filePatch(oldFilePath: String, patchFilePath: String, combineFilePath: String): Int
 }
