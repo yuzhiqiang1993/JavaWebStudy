@@ -15,7 +15,7 @@ object BsDiffUtil {
         try {
             /*获取当前项目所在的linux路径 示例：/home/admin/webapp */
 //            final String projectPath = System.getProperty("user.dir");
-            val libPath = "lib" + File.separator + "libxeon_bsdiff.so"
+            val libPath = "lib${File.separator}libxeon_bsdiff.so"
             val libName = "libxeon_bsdiff.so"
 
             /*mac上使用dylib*/

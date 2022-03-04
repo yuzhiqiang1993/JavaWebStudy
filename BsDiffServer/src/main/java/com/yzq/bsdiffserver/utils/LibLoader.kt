@@ -22,22 +22,22 @@ object LibLoader {
 
         /*创建一个目录 用来放so*/
         val nativeLibPath =
-            projectPath + File.separator + "tmp" + File.separator + "bsdiffdemo" + File.separator + "lib" + File.separator
+            "$projectPath${File.separator}tmp${File.separator}bsdiffdemo${File.separator}lib${File.separator}"
         val nativeLibFolder = File(nativeLibPath)
         if (!nativeLibFolder.exists()) {
             nativeLibFolder.mkdirs()
         }
         /*用来存放临时文件的目录*/
         val filePath =
-            projectPath + File.separator + "tmp" + File.separator + "bsdiffdemo" + File.separator + "file" + File.separator
+            "$projectPath${File.separator}tmp${File.separator}bsdiffdemo${File.separator}file${File.separator}"
         val fileFolder = File(filePath)
         if (!fileFolder.exists()) {
             fileFolder.mkdirs()
         }
         val libFile = File(nativeLibFolder, libName)
-        println("libFile.getAbsolutePath() = " + libFile.absolutePath)
+        println("libFile.getAbsolutePath() = ${libFile.absolutePath}")
         if (libFile.exists()) {
-            println("libFile 文件存在 libFile.getAbsolutePath() = " + libFile.absolutePath)
+            println("libFile 文件存在 libFile.getAbsolutePath() = ${libFile.absolutePath}")
             System.load(libFile.absolutePath)
         } else {
             try {
@@ -50,7 +50,7 @@ object LibLoader {
                 println("copy result= $copy")
                 inputStream.close()
                 fileOutputStream.close()
-                println("libFile.getAbsolutePath() = " + libFile.absolutePath)
+                println("libFile.getAbsolutePath() = ${libFile.absolutePath}")
                 System.load(libFile.path)
             } catch (e: Exception) {
                 e.printStackTrace()
