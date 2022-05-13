@@ -1,5 +1,6 @@
 package com.yzq.kotlin_springboot_maven.controller
 
+import com.yzq.kotlin_springboot_maven.dao.data.TestBean
 import com.yzq.kotlin_springboot_maven.dao.data.User
 import com.yzq.kotlin_springboot_maven.data.resp.BaseResp
 import com.yzq.kotlin_springboot_maven.exception.BizException
@@ -28,6 +29,29 @@ class UserController {
         }
 
         return baseResp
+
+    }
+
+    @GetMapping("/test")
+    fun test(): BaseResp<TestBean> {
+
+        val baseResp = BaseResp<TestBean>()
+        tryCatchBlock(baseResp) {
+
+
+            baseResp.data = TestBean("yzq", 18, "1.0", "2.0")
+        }
+        return baseResp
+
+    }
+
+
+    @PostMapping("/desc")
+    fun desc(@RequestBody testBean: TestBean): String {
+
+        println("testBean = ${testBean}")
+
+        return "ok"
 
     }
 
