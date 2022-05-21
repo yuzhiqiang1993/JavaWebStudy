@@ -16,7 +16,6 @@ import java.time.format.DateTimeFormatter
 class JacksonConfig {
     @Value("\${spring.jackson.date-format}")
     private val pattern: String? = null
-    
 
     @Bean
     fun localDateTimeDeserializer(): LocalDateTimeSerializer? {

@@ -1,0 +1,15 @@
+spring:
+  redis:
+    host: 47.101.162.134
+    password: 19930904
+    port: 6379
+    lettuce:
+      pool:
+        max-active: 8 #最大链接
+        max-idle: 8 #最大空闲链接
+        min-idle: 0 #最小空闲链接
+        max-wait: 100 #空闲链接等待时间
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
