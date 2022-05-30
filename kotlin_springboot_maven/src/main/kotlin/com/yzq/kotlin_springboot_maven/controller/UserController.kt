@@ -7,6 +7,7 @@ import com.yzq.kotlin_springboot_maven.exception.BizException
 import com.yzq.kotlin_springboot_maven.extend.tryCatchBlock
 import com.yzq.kotlin_springboot_maven.service.UserService
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.transaction.support.TransactionTemplate
 import org.springframework.web.bind.annotation.*
 import java.util.concurrent.TimeUnit
 
@@ -17,6 +18,9 @@ class UserController {
 
     @Autowired
     private lateinit var userService: UserService
+
+    @Autowired
+    private lateinit var transactionTemplate: TransactionTemplate
 
 
     @GetMapping("/userList")
@@ -82,8 +86,16 @@ class UserController {
     fun addUser(@RequestBody user: User): BaseResp<String> {
         val baseResp = BaseResp<String>()
         tryCatchBlock(baseResp) {
-            /*校验数据*/
-            userService.save(user)
+
+            /*事务*/
+            transactionTemplate.execute {
+                userService.save(user)
+
+//                throw Exception("事务中出异常")
+            }
+
+            println("user = ${user.id}")
+            userService.getById(user.id)
             baseResp.data = "添加成功"
         }
         return baseResp
