@@ -6,10 +6,15 @@ import com.yzq.kotlin_springboot_maven.data.resp.BaseResp
 import com.yzq.kotlin_springboot_maven.exception.BizException
 import com.yzq.kotlin_springboot_maven.extend.tryCatchBlock
 import com.yzq.kotlin_springboot_maven.service.UserService
+import kotlinx.coroutines.async
+import kotlinx.coroutines.awaitAll
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.delay
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.transaction.support.TransactionTemplate
 import org.springframework.web.bind.annotation.*
 import java.util.concurrent.TimeUnit
+import kotlin.system.measureTimeMillis
 
 
 @RestController
@@ -102,5 +107,26 @@ class UserController {
 
     }
 
+    @GetMapping("/testCoroutine")
+    suspend fun testCoroutine() = coroutineScope {
+        println("开始执行")
+        val measureTimeMillis = measureTimeMillis {
+            val deferred1 = async {
+                println("Thread.currentThread().name = ${Thread.currentThread().name}")
+                delay(2000)
+                1
+            }
 
+            val deferred2 = async {
+                println("Thread.currentThread().name = ${Thread.currentThread().name}")
+                delay(2000)
+                2
+            }
+
+            val sum = awaitAll(deferred1, deferred2).sum()
+            println("sum = ${sum}")
+
+        }
+        measureTimeMillis
+    }
 }

@@ -4,5 +4,4 @@ import com.baomidou.mybatisplus.extension.service.IService
 import com.yzq.kotlin_springboot_maven.dao.data.User
 
 
-interface UserService : IService<User> {
-}
+interface UserService : IService<User>
