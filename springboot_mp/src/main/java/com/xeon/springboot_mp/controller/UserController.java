@@ -10,12 +10,11 @@ import com.xeon.springboot_mp.data.resp.BaseResp;
 import com.xeon.springboot_mp.data.resp.RespPageUser;
 import com.xeon.springboot_mp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/user")
 public class UserController {
 
@@ -25,7 +24,6 @@ public class UserController {
 
 
     @GetMapping("/list")
-    @ResponseBody
     List<User> getUserList() {
 
 
@@ -37,7 +35,6 @@ public class UserController {
     }
 
     @GetMapping("/getUserById")
-    @ResponseBody
     User getUserById(Integer userId) {
 
         final User user = userService.getById(userId);
@@ -49,7 +46,6 @@ public class UserController {
 
 
     @PostMapping(value = "/getUserLikeName")
-    @ResponseBody
     List<User> getUserLikeName(@RequestBody KeyWord keyWord) {
 
         System.out.println("接收的参数:" + keyWord);
@@ -63,7 +59,6 @@ public class UserController {
 
 
     @PostMapping("/getUsers")
-    @ResponseBody
     BaseResp<RespPageUser> getUserList(@RequestBody RequestPage requestPage) {
 
         final BaseResp<RespPageUser> listBaseResp = new BaseResp<>();

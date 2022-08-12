@@ -23,4 +23,14 @@
         update_time,
         `enable`
     </sql>
+
+    <select id="select_date">
+        select *
+        from user
+        where create_time
+                  between
+                  CONCAT
+                      (date_sub(curdate(), interval #{interval} day), ' 00:00:00')
+                  and CONCAT(curdate(), ' 23:59:59')
+    </select>
 </mapper>

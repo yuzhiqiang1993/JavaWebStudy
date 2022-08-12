@@ -8,4 +8,5 @@ import com.xeon.springboot_mp.dao.User;
  */
 public interface UserService extends IService<User> {
 
+
 }

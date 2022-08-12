@@ -14,7 +14,13 @@
     </resultMap>
     <sql id="Base_Column_List">
         <!--@mbg.generated-->
-        id, `name`, age, gender, create_time, update_time, `enable`
+        id,
+        `name`,
+        age,
+        gender,
+        create_time,
+        update_time,
+        `enable`
     </sql>
     <update id="updateBatch" parameterType="java.util.List">
         <!--@mbg.generated-->
@@ -59,8 +65,8 @@
     <insert id="batchInsert" keyColumn="id" keyProperty="id" parameterType="map" useGeneratedKeys="true">
         <!--@mbg.generated-->
         insert into `user`
-                (`name`, age, gender, create_time, update_time, `enable`)
-                values
+            (`name`, age, gender, create_time, update_time, `enable`)
+        values
         <foreach collection="list" item="item" separator=",">
             (#{item.name,jdbcType=VARCHAR}, #{item.age,jdbcType=TINYINT}, #{item.gender,jdbcType=OTHER},
              #{item.createTime,jdbcType=TIMESTAMP}, #{item.updateTime,jdbcType=TIMESTAMP},

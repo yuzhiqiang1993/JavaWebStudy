@@ -1,9 +1,6 @@
 package com.yzq.kotlin_springboot_maven
 
-import kotlinx.coroutines.async
-import kotlinx.coroutines.awaitAll
-import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.delay
+import kotlinx.coroutines.*
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 

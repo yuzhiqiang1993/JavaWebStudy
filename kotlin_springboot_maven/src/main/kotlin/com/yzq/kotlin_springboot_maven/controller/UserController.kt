@@ -6,10 +6,7 @@ import com.yzq.kotlin_springboot_maven.data.resp.BaseResp
 import com.yzq.kotlin_springboot_maven.exception.BizException
 import com.yzq.kotlin_springboot_maven.extend.tryCatchBlock
 import com.yzq.kotlin_springboot_maven.service.UserService
-import kotlinx.coroutines.async
-import kotlinx.coroutines.awaitAll
-import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.delay
+import kotlinx.coroutines.*
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.transaction.support.TransactionTemplate
 import org.springframework.web.bind.annotation.*
@@ -46,8 +43,6 @@ class UserController {
 
         val baseResp = BaseResp<TestBean>()
         tryCatchBlock(baseResp) {
-
-
             baseResp.data = TestBean("yzq", 18, "1.0", "2.0")
         }
         return baseResp
@@ -70,7 +65,7 @@ class UserController {
         val baseResp = BaseResp<String>()
 
         tryCatchBlock(baseResp) {
-            throw BizException(-88, "后端异常了")
+            throw BizException(500, "后端异常了")
         }
         return baseResp
 
@@ -108,25 +103,35 @@ class UserController {
     }
 
     @GetMapping("/testCoroutine")
-    suspend fun testCoroutine() = coroutineScope {
-        println("开始执行")
-        val measureTimeMillis = measureTimeMillis {
-            val deferred1 = async {
-                println("Thread.currentThread().name = ${Thread.currentThread().name}")
-                delay(2000)
-                1
+    suspend fun testCoroutine(@RequestParam(defaultValue = "0") id: Long): BaseResp<Long> = coroutineScope {
+
+        val baseResp = BaseResp<Long>()
+
+
+        tryCatchBlock(baseResp) {
+            val measureTimeMillis = measureTimeMillis {
+
+                println("id = ${id}")
+
+                val deferred1 = async {
+                    println("Thread.currentThread().name = ${Thread.currentThread().name}")
+                    delay(2000)
+                    throw Exception("测试异常")
+                    1
+                }
+
+                val deferred2 = async {
+                    println("Thread.currentThread().name = ${Thread.currentThread().name}")
+                    delay(2000)
+                    2
+                }
+
+                val sum = awaitAll(deferred1, deferred2).sum() + id
+                println("sum = ${sum}")
+
             }
-
-            val deferred2 = async {
-                println("Thread.currentThread().name = ${Thread.currentThread().name}")
-                delay(2000)
-                2
-            }
-
-            val sum = awaitAll(deferred1, deferred2).sum()
-            println("sum = ${sum}")
-
+            baseResp.data = measureTimeMillis
         }
-        measureTimeMillis
+        baseResp
     }
 }

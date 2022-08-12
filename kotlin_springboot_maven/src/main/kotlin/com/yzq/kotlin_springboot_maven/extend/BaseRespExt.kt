@@ -3,6 +3,7 @@ package com.yzq.kotlin_springboot_maven.extend
 import com.yzq.kotlin_springboot_maven.constants.RespEnum
 import com.yzq.kotlin_springboot_maven.data.resp.BaseResp
 import com.yzq.kotlin_springboot_maven.exception.BizException
+import kotlinx.coroutines.*
 import org.springframework.transaction.interceptor.TransactionAspectSupport
 import java.lang.reflect.UndeclaredThrowableException
 
