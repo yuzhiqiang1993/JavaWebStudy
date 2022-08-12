@@ -2,15 +2,19 @@ package com.yzq.kotlin_springboot_maven.controller
 
 import com.yzq.kotlin_springboot_maven.dao.data.TestBean
 import com.yzq.kotlin_springboot_maven.dao.data.User
-import com.yzq.kotlin_springboot_maven.data.resp.BaseResp
+import com.yzq.kotlin_springboot_maven.data.base.BaseResp
+import com.yzq.kotlin_springboot_maven.data.request.UserPageReq
+import com.yzq.kotlin_springboot_maven.data.resp.PageResult
 import com.yzq.kotlin_springboot_maven.exception.BizException
 import com.yzq.kotlin_springboot_maven.extend.tryCatchBlock
 import com.yzq.kotlin_springboot_maven.service.UserService
-import kotlinx.coroutines.*
+import kotlinx.coroutines.async
+import kotlinx.coroutines.awaitAll
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.delay
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.transaction.support.TransactionTemplate
 import org.springframework.web.bind.annotation.*
-import java.util.concurrent.TimeUnit
 import kotlin.system.measureTimeMillis
 
 
@@ -75,7 +79,6 @@ class UserController {
     fun getUserCount(): BaseResp<Long> {
         val baseResp = BaseResp<Long>()
         tryCatchBlock(baseResp) {
-            TimeUnit.SECONDS.sleep(2)
             val count = userService.count()
             baseResp.data = count
         }
@@ -98,6 +101,18 @@ class UserController {
             userService.getById(user.id)
             baseResp.data = "添加成功"
         }
+        return baseResp
+
+    }
+
+    @PostMapping("pageList")
+    fun pageList(@RequestBody pageReq: UserPageReq): BaseResp<PageResult<List<User>>> {
+
+        val baseResp = BaseResp<PageResult<List<User>>>()
+        tryCatchBlock(baseResp) {
+            baseResp.data = userService.pageList(pageReq)
+        }
+
         return baseResp
 
     }

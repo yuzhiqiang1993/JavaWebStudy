@@ -1,7 +1,7 @@
 package com.yzq.kotlin_springboot_maven.extend
 
 import com.yzq.kotlin_springboot_maven.constants.RespEnum
-import com.yzq.kotlin_springboot_maven.data.resp.BaseResp
+import com.yzq.kotlin_springboot_maven.data.base.BaseResp
 import com.yzq.kotlin_springboot_maven.exception.BizException
 import kotlinx.coroutines.*
 import org.springframework.transaction.interceptor.TransactionAspectSupport
@@ -20,10 +20,12 @@ fun <T> BaseResp<T>.error(e: Exception) {
             code = e.code
             msg = e.message
         }
+
         is UndeclaredThrowableException -> {
             /*处理未声明的异常信息*/
             msg = e.undeclaredThrowable.message ?: msg
         }
+
         else -> {
             msg = e.message ?: msg
         }
@@ -47,6 +49,7 @@ inline fun <T> tryCatchBlock(baseResp: BaseResp<T>, block: () -> Unit) {
         block()
     } catch (e: Exception) {
         baseResp.error(e)
+        e.printStackTrace()
     } finally {
         baseResp.time = System.currentTimeMillis() - currentTimeMillis
     }

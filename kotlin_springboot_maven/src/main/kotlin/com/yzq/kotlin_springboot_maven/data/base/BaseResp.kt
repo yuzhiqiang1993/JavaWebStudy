@@ -1,4 +1,4 @@
-package com.yzq.kotlin_springboot_maven.data.resp
+package com.yzq.kotlin_springboot_maven.data.base
 
 import com.yzq.kotlin_springboot_maven.constants.RespEnum
 
