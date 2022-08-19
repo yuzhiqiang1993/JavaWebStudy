@@ -1,6 +1,7 @@
 package com.yzq.kotlin_springboot_maven.config
 
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import org.springframework.beans.factory.annotation.Value
@@ -19,22 +20,21 @@ class JacksonConfig {
 
 
     @Bean
-    fun localDateTimeDeserializer(): LocalDateTimeSerializer? {
+    fun localDateTimeDeserializer(): LocalDateTimeSerializer {
         return LocalDateTimeSerializer(DateTimeFormatter.ofPattern(pattern))
     }
 
+
     @Bean
-    fun jackson2ObjectMapperBuilderCustomizer(): Jackson2ObjectMapperBuilderCustomizer? {
-        return Jackson2ObjectMapperBuilderCustomizer { builder: Jackson2ObjectMapperBuilder ->
-            builder.serializerByType(
-                LocalDateTime::class.java, localDateTimeDeserializer()!!
-            )
+    fun jackson2ObjectMapperBuilderCustomizer(): Jackson2ObjectMapperBuilderCustomizer {
+        return Jackson2ObjectMapperBuilderCustomizer {
+            it.serializerByType(LocalDateTime::class.java, localDateTimeDeserializer())
         }
     }
 
-    @Bean
-    fun mappingJackson2HttpMessageConverter(): MappingJackson2HttpMessageConverter {
-        return MappingJackson2HttpMessageConverter(jacksonObjectMapper().registerModule(JavaTimeModule()))
-    }
+//    @Bean
+//    fun mappingJackson2HttpMessageConverter(): MappingJackson2HttpMessageConverter {
+//        return MappingJackson2HttpMessageConverter(jacksonObjectMapper().registerModule(JavaTimeModule()))
+//    }
 
 }

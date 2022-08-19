@@ -50,7 +50,6 @@ public class User implements Serializable {
     private LocalDateTime createTime;
 
     @TableField(value = "update_time", fill = FieldFill.INSERT_UPDATE)
-    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDateTime updateTime;
 
     @TableField(exist = false)
