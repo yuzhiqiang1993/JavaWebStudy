@@ -54,6 +54,11 @@ class UserController {
     }
 
 
+    @PostMapping("/modifyPassword")
+    fun modifyPassword(@RequestParam new_pass: String) {
+
+    }
+
     @PostMapping("/desc")
     fun desc(@RequestBody testBean: TestBean): String {
 
