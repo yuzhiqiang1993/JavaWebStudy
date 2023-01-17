@@ -4,6 +4,14 @@ import com.yzq.kotlin_springboot_maven.annotation.StringContains
 import javax.validation.ConstraintValidator
 import javax.validation.ConstraintValidatorContext
 
+
+/**
+ * @description: 校验值是否是给定集合中的数据
+ * @author : yuzhiqiang
+ * @date   : 2023/1/17
+ * @time   : 16:10
+ */
+
 class StringContainsValidator : ConstraintValidator<StringContains, String> {
 
 
@@ -18,6 +26,7 @@ class StringContainsValidator : ConstraintValidator<StringContains, String> {
 
     override fun isValid(value: String, context: ConstraintValidatorContext): Boolean {
         println("isValid:$value")
+        /*value是否在集合中*/
         return limitValues.contains(value)
     }
 

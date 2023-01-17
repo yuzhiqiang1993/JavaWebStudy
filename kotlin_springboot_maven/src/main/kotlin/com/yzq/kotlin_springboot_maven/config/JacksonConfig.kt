@@ -8,6 +8,14 @@ import org.springframework.context.annotation.Configuration
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
+
+/**
+ * @description: jackson的配置
+ * @author : yuzhiqiang
+ * @date   : 2023/1/17
+ * @time   : 16:12
+ */
+
 @Configuration
 class JacksonConfig {
     @Value("\${spring.jackson.date-format}")

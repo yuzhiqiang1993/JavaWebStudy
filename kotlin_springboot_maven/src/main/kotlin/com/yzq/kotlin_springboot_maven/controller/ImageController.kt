@@ -17,7 +17,7 @@ class ImageController {
     @ResponseBody
     fun uploadImg(
         @RequestParam("image") image: MultipartFile,
-        @StringContains(limitValues = ["front1", "back"]) key1: String,
+        @StringContains(limitValues = ["front", "back"]) key1: String,//key1的值必须是limitValues集合中的一个
         key2: Boolean,
         key3: Int
     ): String {

@@ -1,12 +1,18 @@
 package com.yzq.kotlin_springboot_maven.annotation
 
 import com.yzq.kotlin_springboot_maven.validator.StringContainsValidator
-import java.lang.annotation.Documented
 import javax.validation.Constraint
 import kotlin.reflect.KClass
 
 
-@Documented
+/**
+ * @description: 校验参数值是否是给定集合中的数据
+ * @author : yuzhiqiang
+ * @date   : 2023/1/17
+ * @time   : 16:11
+ */
+
+@MustBeDocumented
 @Constraint(validatedBy = [StringContainsValidator::class])
 @Target(AnnotationTarget.FIELD, AnnotationTarget.VALUE_PARAMETER)
 @Retention(AnnotationRetention.RUNTIME)
