@@ -23,15 +23,12 @@ class JacksonConfig {
 
 
     @Bean
-    fun localDateTimeDeserializer(): LocalDateTimeSerializer {
-        return LocalDateTimeSerializer(DateTimeFormatter.ofPattern(pattern))
-    }
-
-
-    @Bean
     fun jackson2ObjectMapperBuilderCustomizer(): Jackson2ObjectMapperBuilderCustomizer {
         return Jackson2ObjectMapperBuilderCustomizer {
-            it.serializerByType(LocalDateTime::class.java, localDateTimeDeserializer())
+            it.serializerByType(
+                LocalDateTime::class.java,
+                LocalDateTimeSerializer(DateTimeFormatter.ofPattern(pattern))
+            )
         }
     }
 
