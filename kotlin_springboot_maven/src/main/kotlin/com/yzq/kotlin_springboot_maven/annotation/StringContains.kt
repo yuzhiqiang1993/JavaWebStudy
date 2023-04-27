@@ -1,7 +1,7 @@
 package com.yzq.kotlin_springboot_maven.annotation
 
 import com.yzq.kotlin_springboot_maven.validator.StringContainsValidator
-import javax.validation.Constraint
+import jakarta.validation.Constraint
 import kotlin.reflect.KClass
 
 
