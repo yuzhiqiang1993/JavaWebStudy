@@ -1,6 +1,6 @@
 package com.yzq.kotlinspringbootkts.controller
 
-import com.yzq.kotlinspringbootkts.model.User
+import com.yzq.kotlinspringbootkts.data.User
 import com.yzq.kotlinspringbootkts.service.UserService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.GetMapping

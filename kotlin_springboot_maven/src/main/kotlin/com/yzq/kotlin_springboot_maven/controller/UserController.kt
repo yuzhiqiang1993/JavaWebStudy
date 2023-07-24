@@ -8,10 +8,7 @@ import com.yzq.kotlin_springboot_maven.data.resp.PageResult
 import com.yzq.kotlin_springboot_maven.exception.BizException
 import com.yzq.kotlin_springboot_maven.extend.tryCatchBlock
 import com.yzq.kotlin_springboot_maven.service.UserService
-import kotlinx.coroutines.async
-import kotlinx.coroutines.awaitAll
-import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.delay
+import kotlinx.coroutines.*
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.transaction.support.TransactionTemplate
 import org.springframework.web.bind.annotation.*
@@ -126,6 +123,7 @@ class UserController {
     suspend fun testCoroutine(@RequestParam(defaultValue = "0") id: Long): BaseResp<Long> = coroutineScope {
 
         val baseResp = BaseResp<Long>()
+
 
 
         tryCatchBlock(baseResp) {

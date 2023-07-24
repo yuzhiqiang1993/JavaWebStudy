@@ -1,4 +1,4 @@
-package com.yzq.kotlinspringbootkts.model
+package com.yzq.kotlinspringbootkts.data
 
 import com.baomidou.mybatisplus.annotation.FieldFill
 import com.baomidou.mybatisplus.annotation.IdType

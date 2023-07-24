@@ -26,8 +26,32 @@ dependencies {
     // https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-boot-starter
     implementation("com.baomidou:mybatis-plus-boot-starter:3.5.3.1")
 
+    // https://mvnrepository.com/artifact/io.milvus/milvus-sdk-java
+    implementation("io.milvus:milvus-sdk-java:2.2.6")
+
+
+    // https://mvnrepository.com/artifact/org.deeplearning4j/deeplearning4j-core
+//    implementation("org.deeplearning4j:deeplearning4j-core:1.0.0-M2")
+//    implementation("org.deeplearning4j:deeplearning4j-nlp:1.0.0-M2")
+
+    // https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-coroutines-core
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
+    // https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-coroutines-reactor
+    runtimeOnly("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.7.1")
+
+
+    // https://mvnrepository.com/artifact/com.squareup.retrofit2/retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+// https://mvnrepository.com/artifact/com.squareup.retrofit2/converter-jackson
+    implementation("com.squareup.retrofit2:converter-jackson:2.9.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.9.1")
+    implementation("com.squareup.okhttp3:okhttp:4.9.1")
+
+
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+
 }
 
 tasks.withType<KotlinCompile> {
