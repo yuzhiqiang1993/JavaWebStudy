@@ -27,7 +27,7 @@ dependencies {
     implementation("com.baomidou:mybatis-plus-boot-starter:3.5.3.1")
 
     // https://mvnrepository.com/artifact/io.milvus/milvus-sdk-java
-    implementation("io.milvus:milvus-sdk-java:2.2.6")
+    implementation("io.milvus:milvus-sdk-java:2.3.1")
 
 
     // https://mvnrepository.com/artifact/org.deeplearning4j/deeplearning4j-core
@@ -35,9 +35,9 @@ dependencies {
 //    implementation("org.deeplearning4j:deeplearning4j-nlp:1.0.0-M2")
 
     // https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-coroutines-core
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
     // https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-coroutines-reactor
-    runtimeOnly("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.7.1")
+    runtimeOnly("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.7.3")
 
 
     // https://mvnrepository.com/artifact/com.squareup.retrofit2/retrofit
