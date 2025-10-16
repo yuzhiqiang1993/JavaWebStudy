@@ -1,4 +1,4 @@
-package com.yzq.kotlin_springboot_maven.config
+package com.yzq.kotlinspringbootkts.config
 
 import com.baomidou.mybatisplus.annotation.DbType
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor

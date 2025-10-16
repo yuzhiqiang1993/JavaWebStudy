@@ -108,12 +108,12 @@
     <update id="updateByPrimaryKey" parameterType="com.yzq.kotlinspringbootkts.data.User">
         <!--@mbg.generated-->
         update `user`
-        set `name`      = #{name,jdbcType=VARCHAR},
-            age         = #{age,jdbcType=TINYINT},
-            gender      = #{gender,jdbcType=OTHER},
-            create_time = #{createTime,jdbcType=TIMESTAMP},
-            update_time = #{updateTime,jdbcType=TIMESTAMP},
-            `enable`    = #{enable,jdbcType=TINYINT}
+        set `name` = #{name,jdbcType=VARCHAR},
+        age = #{age,jdbcType=TINYINT},
+        gender = #{gender,jdbcType=OTHER},
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+        `enable` = #{enable,jdbcType=TINYINT}
         where id = #{id,jdbcType=BIGINT}
     </update>
 </mapper>

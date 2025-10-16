@@ -15,27 +15,19 @@ class UserService {
         return userMapper.selectList(null)
     }
 
-    fun deleteByPrimaryKey(id: Long): Int {
-        return userMapper.deleteByPrimaryKey(id)
+    fun getById(id: Long): User? {
+        return userMapper.selectById(id)
     }
 
-    fun insert(record: User): Int {
-        return userMapper.insert(record)
+    fun create(user: User): Int {
+        return userMapper.insert(user)
     }
 
-    fun insertSelective(record: User): Int {
-        return userMapper.insertSelective(record)
+    fun updateById(user: User): Int {
+        return userMapper.updateById(user)
     }
 
-    fun selectByPrimaryKey(id: Long): User {
-        return userMapper.selectByPrimaryKey(id)
-    }
-
-    fun updateByPrimaryKeySelective(record: User): Int {
-        return userMapper.updateByPrimaryKeySelective(record)
-    }
-
-    fun updateByPrimaryKey(record: User): Int {
-        return userMapper.updateByPrimaryKey(record)
+    fun deleteById(id: Long): Int {
+        return userMapper.deleteById(id)
     }
 }

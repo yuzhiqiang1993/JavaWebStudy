@@ -1,4 +1,4 @@
-package com.yzq.kotlin_springboot_maven.handler
+package com.yzq.kotlinspringbootkts.handler
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler
 import org.apache.ibatis.reflection.MetaObject
@@ -30,7 +30,7 @@ class FillMetaObjectHandler : MetaObjectHandler {
 
     override fun updateFill(metaObject: MetaObject) {
         /*正常写法*/
-        strictInsertFill(
+        strictUpdateFill(
             metaObject, "updateTime",
             { LocalDateTime.now() },
             LocalDateTime::class.java
